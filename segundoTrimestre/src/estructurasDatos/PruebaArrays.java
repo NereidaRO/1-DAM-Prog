@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package estructurasDatos;
+import static java.util.Arrays.binarySearch;
+import static java.util.Arrays.copyOfRange;
 import java.util.Random;
+import java.util.Scanner;
+
 
 /**
  * @since 13/01/2025
@@ -40,4 +44,49 @@ public class PruebaArrays {
     /*NOTA: bucle foreach
     * for(tipo elemento: array){code}
     */
+    
+    /*
+    * EJ 8.3 Desarrolla un programa que pida por consola el número de alumnos de una clase y que, a continuación solicite los N nombres para
+    * almacenarlos en un array. A continuación, implementa los métodos necesarios para eliminar
+    * a un alumno del array a partir de su nombre, para añadir un alumno nuevo al array de alumno y para ordenar el listado de alumnos.
+    */
+    public static void numberStudents (){
+        int numStud = 0;
+        String [] studentList;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("¿Cuántos alumnos tiene la clase?");
+        numStud = sc.nextInt();
+        studentList = new String[numStud];
+        for (int i = 0; i<studentList.length - 1; i++){
+            System.out.println("Introduce un nombre: ");
+            studentList[i] = sc.nextLine();
+        }
+        System.out.println("Tu clase es: " + studentList);
+    }
+    
+    public static String[] addStudent(String [] studentList, String newStudent){
+        String [] newStudentList;
+        newStudentList = new String [studentList.length+1];
+        newStudentList[newStudentList.length-1] = newStudent;
+        System.out.println("Lista nueva: " + newStudentList);
+        return(newStudentList);
+    }
+    public static String[] removeStudent(String [] studentList, String rmStudent){
+        //binary search
+        int indexRm = binarySearch(studentList, rmStudent);
+        String [] array1 = copyOfRange(studentList, 0, indexRm);
+        String [] array2 = copyOfRange(studentList, indexRm, studentList.length -1);
+        String [] newStudentList = new String [array1.length + array2.length];
+        System.arraycopy(studentList, 0, newStudentList, 0, indexRm);
+        System.arraycopy(studentList, indexRm+1, newStudentList, indexRm, newStudentList.length-indexRm);
+        return(newStudentList);
+    }
+    public static void orderStudent(String [] studentList){
+        java.util.Arrays.sort(studentList);
+        System.out.println("Lista ordenada: " + studentList);
+    }
+    
+    public static void wordMatrix(){
+        //para el martes
+    }
 }

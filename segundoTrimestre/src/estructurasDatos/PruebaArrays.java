@@ -50,18 +50,18 @@ public class PruebaArrays {
     * almacenarlos en un array. A continuación, implementa los métodos necesarios para eliminar
     * a un alumno del array a partir de su nombre, para añadir un alumno nuevo al array de alumno y para ordenar el listado de alumnos.
     */
-    public static void numberStudents (){
-        int numStud = 0;
+    public static String[] numberStudents (){
+        //Funciona bien
         String [] studentList;
         Scanner sc = new Scanner(System.in);
         System.out.println("¿Cuántos alumnos tiene la clase?");
-        numStud = sc.nextInt();
+        int numStud = sc.nextInt();
         studentList = new String[numStud];
-        for (int i = 0; i<studentList.length - 1; i++){
+        for (int i = 0; i<studentList.length; i++){
             System.out.println("Introduce un nombre: ");
-            studentList[i] = sc.nextLine();
+            studentList[i] = sc.next();
         }
-        System.out.println("Tu clase es: " + studentList);
+        return(studentList);
     }
     
     public static String[] addStudent(String [] studentList, String newStudent){
@@ -85,9 +85,12 @@ public class PruebaArrays {
         java.util.Arrays.sort(studentList);
         System.out.println("Lista ordenada: " + studentList);
     }
-    
-    public static void wordMatrix(){
+    /* 8.4 Escribe un programa que sea capaz de contar el número de palabras diferentes que hay en un texto 
+    * que se le pasa por argumento, sin tenr en cuenta si están escritas en mayúsculas o minúsculas
+    */
+    public static String [] wordMatrix(String texto){
         //para el martes
-
+        String [] words = texto.split(" ");
+        return(words);
     }
 }

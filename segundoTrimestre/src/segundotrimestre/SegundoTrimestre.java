@@ -7,7 +7,7 @@ package segundotrimestre;
 import estructurasDatos.PruebaArrays;
 import static estructurasDatos.PruebaArrays.randomArray;
 import static estructurasDatos.PruebaArrays.sumatoryArray;
-
+import static estructurasDatos.PruebaArrays.*;
 /**
  * @since 07/01/2025
  * @author Nereida Rodríguez Orenes
@@ -25,5 +25,14 @@ public class SegundoTrimestre {
         PruebaArrays.sumatoryArray(arraySumar);
         java.util.Arrays.sort(arraySumar);
         System.out.println(java.util.Arrays.toString(arraySumar));
+        //Prueba 8.3
+        String [] listaAlumnos;
+        listaAlumnos = numberStudents();
+        //Prueba 8.4
+        String frase = "Cacao, avellana y azúcar";
+        String [] palabras = PruebaArrays.wordMatrix(frase);
+        for (String element: palabras){
+            System.out.println(element);
+        }
     }
 }

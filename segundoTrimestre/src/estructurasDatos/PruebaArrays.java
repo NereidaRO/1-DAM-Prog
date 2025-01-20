@@ -40,4 +40,22 @@ public class PruebaArrays {
     /*NOTA: bucle foreach
     * for(tipo elemento: array){code}
     */
+    /*8.3 Desarrolla un programa que pida por consola el número de alumnos
+    * de una clase y que, a continuación solicite los N nombres para almacenarlos en un array. A continuación, 
+    * implementa los métodos necesarios para eliminar a un alumno del array a partir de su nombre, 
+    * para añadir un alumno nuevo al array de alumno y para ordenar el listado de alumnos.
+    */
+    public static void countStudents(){}
+    public static void orderStudents(){}
+    public static void addStudent(){}
+    public static void deleteStudent(){}
+    //Todo en la misma, usar scanner
+    
+    /*8.4 Escribe un programa que sea capaz de contar el numero de palabras diferentes que hay en un texto 
+    * que se le pasa por argumentos, sin tener en cuenta si están escritas en mayúscula o minúscula.
+    */
+    public static void countWords(String text){
+        String [] words = text.split(" ");
+        System.out.println("El texto tiene " + words.length + " palabras");
+    }
 }

@@ -18,7 +18,7 @@ public class SegundoTrimestre {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//Prueba arrays (ej 8.1 y 8.2)
+        //Prueba arrays (ej 8.1 y 8.2)
         /*Esto son referencias a las clases porque los métodos son estáticos, pero lo que quiere el profesor es que creemos un objeto para guardar
         *y procesar*/
         int [] arraySumar = PruebaArrays.randomArray();

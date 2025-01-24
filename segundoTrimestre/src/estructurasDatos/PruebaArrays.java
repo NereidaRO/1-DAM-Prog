@@ -130,17 +130,27 @@ public class PruebaArrays {
     
     /*c) Reemplazar un valor por otro (introducidos ambos por parámetros), la primera vez. Devolver 0 (no existe el
     valor a cambiar) o 1 (éxito)*/
-    public static void randomChange(int[] randomArray, int oldValue, int newValue){
+    public static int randomChange(int[] randomArray, int oldValue, int newValue){
         System.out.println("Quiere cambiar el número: " + oldValue + " por " + newValue);
-        //sort y binarySearch
-        java.util.Arrays.sort(randomArray);
         int positionToChange = java.util.Arrays.binarySearch(randomArray, oldValue);
-        //if (positionToChange == true){}
         System.out.println("Binary search devuelve: " + positionToChange);
+        //NO ENTRA EN IF --> ver de nuevo binarySearch, devuelve posiciones negativas
+        if (positionToChange<randomArray.length && positionToChange>=0){
+            randomArray[positionToChange] = newValue;
+            System.out.println("Cambio completado");
+            return(1);
+        }else{
+            System.out.println(oldValue + " no existe");
+            return(0);
+        }
     }
     
     /*d) Hacer lo mismo que en c, llamándolo, para que sustituya todas las veces (mientras no devuelva 0)*/
     public static void randomMultiChange(int[] randomArray, int oldValue, int newValue){
-        //bucle while
+        int changeResult = randomChange(randomArray, oldValue, newValue);
+        while(changeResult != 0){
+            changeResult = randomChange(randomArray, oldValue, newValue);
+        }
+        System.out.println ("Cambios terminados");
     }
 }

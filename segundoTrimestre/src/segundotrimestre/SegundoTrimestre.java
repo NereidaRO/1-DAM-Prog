@@ -22,8 +22,8 @@ public class SegundoTrimestre {
      */
     public static void main(String[] args) {
         ///////////////////////////////HERENCIA MÚLTIPLE/////////////////////////////////////////////
-        PersonalUniversitario manolito = new PersonalUniversitario("001", "Manuel");
-        System.out.println("El sueldo neto es: " + manolito.calcularSueldo(1200.67f));
+        /*PersonalUniversitario manolito = new PersonalUniversitario("001", "Manuel");
+        System.out.println("El sueldo neto es: " + manolito.calcularSueldo(1200.67f));*/
         
         ///////////////////////////////ARRAYS ESTÁTICOS/////////////////////////////////////////////
         
@@ -31,8 +31,8 @@ public class SegundoTrimestre {
         /*Esto son referencias a las clases porque los métodos son estáticos, pero lo que quiere el profesor es que creemos un objeto para guardar
         *y procesar*/
         int [] arrayPrueba = PruebaArrays.randomArray();
-        PruebaArrays.sumatoryArray(arrayPrueba);
-        java.util.Arrays.sort(arrayPrueba);
+        /*PruebaArrays.sumatoryArray(arrayPrueba);
+        java.util.Arrays.sort(arrayPrueba);*/
         System.out.println(java.util.Arrays.toString(arrayPrueba));
         
         //Prueba 8.3
@@ -49,13 +49,14 @@ public class SegundoTrimestre {
         //Prueba 8.5
         PruebaArrays.randomMax(arrayPrueba);
         PruebaArrays.randomMin(arrayPrueba);
-        
+        PruebaArrays.randomMultiChange(arrayPrueba, 88, 1000);
+        System.out.println(java.util.Arrays.toString(arrayPrueba));
         //HashSet
-        Hashes hashes = new Hashes();
+        /*Hashes hashes = new Hashes();
         Iterator<String> itr = hashes.setNombres.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
-        System.out.println(hashes.setNombres);
+        System.out.println(hashes.setNombres);*/
     }
 }

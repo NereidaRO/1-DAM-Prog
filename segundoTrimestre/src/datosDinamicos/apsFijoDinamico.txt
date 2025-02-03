@@ -1,0 +1,109 @@
+##Apuntes y explicación de Thanya Tiffany Jecroix Savo##
+
+##Arrays fijos a dinámicos##
+
+//Array fijo 
+	public static int[] generarnumeroAleatoriosArrayfijo () { 
+		Random random = new Random ();
+		int [] numerosAF = new int[10];
+		
+		//este bucle genera los nmeros
+		for(int i = 0; i < numerosAF.length; i++) {
+			numerosAF[i] = random.nextInt(99) + 1;
+		}	
+		//este bucle muestra los numeros 
+		System.out.println("Array Fijo");
+		for (int i = 0; i<numerosAF.length;i++) {
+			System.out.println("numero " + (i) + ": " + numerosAF[i]);
+		}
+		return numerosAF;	
+	}
+	
+	//Array Dinamico
+	public static ArrayList<Integer> generarNumerosAleatoriosArrayDinamico () {
+		Random random = new Random ();
+		ArrayList<Integer> numerosAD = new ArrayList ();
+		//este bucle genera los nmeros
+		for (int i = 0; i<10;i++) {
+			numerosAD.add(random.nextInt(99));
+		}
+		//este bucle muestra los numeros
+		System.out.println("Array Dinamico");
+		for (int i = 0; i<numerosAD.size();i++) {
+			System.out.println("numero " + (i) + ": " + numerosAD.get(i));
+		}
+		
+		return numerosAD;
+	}
+public static void ejemplodeFijoaDinamico1 (int[] numerosAF) {
+		System.out.println("De Fijo a Dinamico con los numeros aleatorios");
+		//aqui mostramos el array fijo
+		for (int i = 0; i<numerosAF.length;i++) {
+			System.out.println("numero " + (i) + ": " + numerosAF[i]);
+		}
+		//creamos un array dinamico para insertarlo en uno fijo 
+		ArrayList<Integer> arrayDinamico = new ArrayList<>();
+		
+		for (int i = 0; i<numerosAF.length;i++) {
+			arrayDinamico.add(numerosAF[i]);
+		}
+		//ahora podemos agregar o eliminar elemntos ya siendo un array dinamico 
+		arrayDinamico.add(7);
+		for (int i = 0; i<arrayDinamico.size();i++) {
+			System.out.println("numero "+ (i) + ":" + arrayDinamico.get(i));
+		}
+		
+	}
+	public static void ejmplodeDinamicoaFijo1 (int []numerosAF , ArrayList<Integer> numerosAD) {
+		System.out.println("De Dinamico a fijo con numeros aleatorios");
+		
+		//asi pasamos de dinamicos a fijos 
+		for (int i = 0; i<numerosAD.size();i++) {
+			numerosAF[i] = numerosAD.get(i);
+		}
+		//para añadir una posicion extra en una posicion concreta
+		System.out.println("POSICION INTERMEDIA");
+		int [] nuevoArrayFijo = new int [11];
+		System.arraycopy(numerosAF, 0, nuevoArrayFijo, 0, 2);//aqui contamos desde 1
+		nuevoArrayFijo[2] = 1000;//aqui contamos desde 0, para acceder a la posicion 3 es 1 menos siempre
+		System.arraycopy(numerosAF, 2, nuevoArrayFijo, 3, numerosAF.length-2);
+		
+		for (int i = 0; i<nuevoArrayFijo.length;i++) {
+			System.out.println("numero " + (i) + ": " + nuevoArrayFijo[i]);
+		}
+		//para añadir una posicion extra en la ultima posicion
+		System.out.println("ULTIMA POSICION");
+		int [] nuevoArrayFijo1 = new int [11];
+		System.arraycopy(numerosAF, 0, nuevoArrayFijo1, 0, numerosAF.length);
+		nuevoArrayFijo1[nuevoArrayFijo1.length - 1] = 1000;
+		
+		for (int i = 0; i<nuevoArrayFijo.length;i++) {
+			System.out.println("numero " + (i) + ": " + nuevoArrayFijo1[i]);
+		}
+	}
+
+## Static vs Final ##
+
+STATIC
+	.si un metodo, atributo, constante, etc... es static puedo llamarlo desde fuera de la clase 
+	sin necesidad de instanciar la clase, metodo, atributo que contiene el static
+	
+	CON STATIC
+	
+	Persona.IRPF (valido)
+	
+	SIN STATIC
+	
+	Persona persona = new Persona();
+	persona.IRPF (valido)
+
+FINAL
+	
+	.el final solo sirve para aquellos valores que seran constantes
+	.solo en la asignacion directa es donde el final no permite cambiar el valor 
+	
+	Persona.IRPF = 100;(asignacion directa)
+	Persona.setIRPF(100);
+	Persona(IRPF)
+
+

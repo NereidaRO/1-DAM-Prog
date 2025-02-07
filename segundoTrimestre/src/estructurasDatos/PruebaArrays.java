@@ -135,6 +135,7 @@ public class PruebaArrays {
         int positionToChange = java.util.Arrays.binarySearch(randomArray, oldValue);
         System.out.println("Binary search devuelve: " + positionToChange);
         //NO ENTRA EN IF --> ver de nuevo binarySearch, devuelve posiciones negativas
+        //contains, valueOf --> dinámico
         if (positionToChange<randomArray.length && positionToChange>=0){
             randomArray[positionToChange] = newValue;
             System.out.println("Cambio completado");

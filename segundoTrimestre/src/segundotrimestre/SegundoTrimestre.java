@@ -4,6 +4,7 @@
  */
 package segundotrimestre;
 
+import calcPackage.Calculator;
 import datosDinamicos.FijoDinamico;
 import datosDinamicos.Hashes;
 import datosDinamicos.SupPra4;
@@ -74,9 +75,15 @@ public class SegundoTrimestre {
         //RECUERDA: import --> objeto --> función; ¡no es javaScript, es Java, instanciaaaa!
         arrayPrueba = colectionTranslator.dinamicoAFijo(arrayDinamicoPrueba);*/
         
+        //EJERCICIO ACT0 (excepciones)
+        Calculator calculadora = new Calculator();
+        float resultadoDivision;
+        resultadoDivision = calculadora.dividir('o', 3.0f);
+        System.out.println("El resultado de la división es: " + resultadoDivision);
+        
         //SUPUESTO PRÁCTICO 4 (excepciones)
-        SupPra4 charPosition = new SupPra4();
+        /*SupPra4 charPosition = new SupPra4();
         char resultChar = charPosition.charPosition("Anacardos con tomate");
-        System.out.println("El caracter que buscas es: " + resultChar);
+        System.out.println("El caracter que buscas es: " + resultChar);*/
     }
 }

@@ -21,7 +21,13 @@ public class Tienda {
         //Atributos
         Scanner sc = new Scanner(System.in);
         boolean continuar = true;
+        Gestion gestion = new Gestion();
         //Menú
+        gestion.introducirProducto();
+        gestion.mostrarArrayList();
+        gestion.mostrarCaja();
+        gestion.mostrarProducto();
+        gestion.venderProducto();
     }
     
 }

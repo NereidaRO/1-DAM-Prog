@@ -146,13 +146,4 @@ public class Gestion {
             System.out.println("En total, tienes un valor de: " + precioTotal + "€ en productos");
         }
     }
-     public static void menu(){
-        System.out.println("Introduzca un número, ¿qué quiere hacer hoy? \n"
-                + "1 - Introducir un producto nuevo \n"
-                + "2 - Mostrar los productos \n"
-                + "3 - Vender un producto \n"
-                + "4 - Mostrar caja \n"
-                + "SALIR - cualquier otro número"
-        );
-    }
 }

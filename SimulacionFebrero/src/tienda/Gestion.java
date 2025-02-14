@@ -22,8 +22,8 @@ public class Gestion {
     //Getters y Setters --> no tiene mucho sentido, debería ser algo para mostrar el array completo
     //mostrarArrayList --> esto no lo pide el ejercicio pero lo necesitaré para comprobaciones
     public void mostrarArrayList(){
-        for(int i = 0; i<catalogo.size(); i++){
-            System.out.println("Objeto " + i + ": " + catalogo.get(i).toString());
+        for(int i = 0; i<this.catalogo.size(); i++){
+            System.out.println("Objeto " + i + ": " + this.catalogo.get(i).toString());
         }
     }
 
@@ -62,7 +62,7 @@ public class Gestion {
             cantStock = sc.nextInt();
             sc.nextLine();
             Cine prodCine = new Cine(director, idProducto, nombre, precioUni, cantStock);
-            catalogo.add(prodCine); 
+            this.catalogo.add(prodCine); 
         }else if(opcion == 2){
             System.out.println("Va a introducir un producto de música");
             System.out.println("Género: ");
@@ -79,7 +79,7 @@ public class Gestion {
             cantStock = sc.nextInt();
             sc.nextLine();
             Musica prodMusica = new Musica(genero, idProducto, nombre, precioUni, cantStock);
-            catalogo.add(prodMusica);
+            this.catalogo.add(prodMusica);
         }else{
             System.out.println("No va a introducir ningún producto");
             //Tiene que volver al menú principal
@@ -87,8 +87,13 @@ public class Gestion {
     }
     public void mostrarProducto(){
         //función de mostrar TODO el catálogo
-        for(int i = 0; i<catalogo.size(); i++){
-            catalogo.get(i).toString();
+        System.out.println("----Estos son los productos que hay registrados:----");
+        if(this.catalogo.isEmpty()){
+        System.out.println("Aun no tienes productos en el catálogo");
+        }else{
+            for(int i = 0; i<this.catalogo.size(); i++){
+                this.catalogo.get(i).toString();
+            }
         }
     }
     public void venderProducto(){
@@ -96,7 +101,7 @@ public class Gestion {
         int udsVenta = 0;
         int nuevoStock = -1;
         Producto prodRecogedor;
-        if(catalogo.isEmpty()){
+        if(this.catalogo.isEmpty()){
             System.out.println("Aun no tienes productos en el catálogo");
         }else{
             //Pedir ID y cantidad a vender
@@ -132,12 +137,12 @@ public class Gestion {
     public void mostrarCaja(){
         Producto prodRecogedor;
         double precioTotal = 0;
-        if(catalogo.isEmpty()){
+        if(this.catalogo.isEmpty()){
             System.out.println("Aun no tienes productos en el catálogo");
         }else{
             //recorrer array mostrando id - nombre - stock - precio
-            for (int i = 0; i<catalogo.size(); i++){
-                prodRecogedor = catalogo.get(i);
+            for (int i = 0; i<this.catalogo.size(); i++){
+                prodRecogedor = this.catalogo.get(i);
                 System.out.println("ID:" + prodRecogedor.getIdProducto() + " - Nombre: " + prodRecogedor.getNombre() + " - Stock: " + prodRecogedor.getCantStock() + " - Precio unitario: " + prodRecogedor.getPrecioUni());
                 //sacar el sumatorio total de todos los precios
                 precioTotal = prodRecogedor.getCantStock() * prodRecogedor.getPrecioUni() + precioTotal;

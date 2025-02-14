@@ -23,7 +23,7 @@ public class Tienda {
         int option = 0;
         boolean continuar = true;
         Gestion gestion = new Gestion();
-        //Menú --> lo paas el profesor (ejemplo de trabajo cooperativo)
+        //Menú --> lo pasa el profesor (ejemplo de trabajo cooperativo)
         do {
             System.out.println("\n\nIntroduzca la opción que desea realizar:\n" 
               + "1 - Introducir producto\n" 
@@ -37,7 +37,7 @@ public class Tienda {
               case 1:
                 gestion.introducirProducto();
               case 2:
-                gestion.mostrarProducto(); //esta función falla, el resto funciona
+                gestion.mostrarProducto(); //ahora sí va, pero tiene que haber productos antes
                 break;
               case 3:
                 gestion.venderProducto();

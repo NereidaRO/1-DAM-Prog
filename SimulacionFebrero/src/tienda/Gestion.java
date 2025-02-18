@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Gestion {
     //Propiedades
-    Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in); //Se recomienda crear el scanner en local en cada método y, al terminar el método, scanner.close()
     ArrayList<Producto> catalogo = new ArrayList<>(); //¡¡¡¡¡ESTUDIAR ESTO MUCHO!!!!!
     
     //Constructores --> NetBeans solo deja hacer el vacío; tiene sentido, ya que el único atributo es un arrayList

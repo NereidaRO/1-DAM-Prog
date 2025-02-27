@@ -1,0 +1,24 @@
+package PCK_GestionEmpresa;
+
+import java.util.ArrayList;
+
+/**
+ * @author Nereida Rodríguez Orenes 1ºDAM
+ * @since 18/02/2025
+ */
+
+public class Factura {
+	private int numFactura;
+	private String fechaFactura; // dd/mm/aa
+	ArrayList<Producto> listaProductos = new ArrayList<>();
+	public Factura(int numFactura, String fechaFactura, ArrayList<Producto> listaProductos) {
+		this.numFactura = numFactura;
+		this.fechaFactura = fechaFactura;
+		this.listaProductos = listaProductos;
+	}
+	
+	public Factura(int numFactura) {
+		this.numFactura = numFactura;
+		this.fechaFactura = "01/01/01";
+	}
+}

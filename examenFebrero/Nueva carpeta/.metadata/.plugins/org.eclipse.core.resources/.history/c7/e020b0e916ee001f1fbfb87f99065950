@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package PCK_GestionEmpresa;
+
+/**
+ * Esta clase implementa los métodos de la interfaz
+ * @author Nereida Rodríguez Orenes 1ºDAM
+ * @since 18/02/2025
+ */
+public class Gestion {
+
+}

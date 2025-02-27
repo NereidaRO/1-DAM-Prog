@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package PCK_GestionEmpresa;
+
+/**
+ * @author Nereida Rodríguez Orenes 1ºDAM
+ * @since 18/02/2025
+ */
+public class Producto {
+	private int idProducto;
+	private String nombreProducto;
+	private int cantProducto;
+	private float precioUnitario;
+	TipoProducto tipoProducto;
+	
+	//Constructor
+	public Producto(int idProducto, String nombreProducto, int cantProducto, float precioUnitario,
+			TipoProducto tipoProducto) {
+		this.idProducto = idProducto;
+		this.nombreProducto = nombreProducto;
+		this.cantProducto = cantProducto;
+		this.precioUnitario = precioUnitario;
+		this.tipoProducto = tipoProducto;
+	}
+	public Producto(int idProducto) {
+		this.idProducto = idProducto;
+		this.nombreProducto = "";
+		this.cantProducto = 0;
+		this.precioUnitario = 0;
+		this.tipoProducto = TipoProducto.MOTOR;
+	}
+	
+}

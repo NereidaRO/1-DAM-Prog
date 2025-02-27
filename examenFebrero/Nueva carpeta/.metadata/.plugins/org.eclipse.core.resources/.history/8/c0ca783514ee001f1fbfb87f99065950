@@ -1,0 +1,16 @@
+package PCK_GestionEmpresa;
+
+public class Motor extends Producto {
+	private String marcaMoto;
+
+	public Motor(String marcaMoto, int idProducto, String nombreProducto, int cantProducto, float precioUnitario, TipoProducto tipoProducto) {
+		super(idProducto, nombreProducto, cantProducto, precioUnitario, tipoProducto);
+		this.marcaMoto = marcaMoto;
+	}
+
+	public Motor(int idProducto) {
+		super(idProducto);
+		this.marcaMoto = "";
+	}
+	
+}

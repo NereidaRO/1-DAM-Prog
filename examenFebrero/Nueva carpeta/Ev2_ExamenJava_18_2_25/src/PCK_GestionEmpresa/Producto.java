@@ -1,0 +1,71 @@
+/**
+ * 
+ */
+package PCK_GestionEmpresa;
+
+/**
+ * @author Nereida Rodríguez Orenes 1ºDAM
+ * @since 18/02/2025
+ */
+public class Producto {
+	private int idProducto;
+	private String nombreProducto;
+	private int cantProducto;
+	private float precioUnitario;
+	TipoProducto tipoProducto;
+	
+	//Constructores
+	public Producto(int idProducto, String nombreProducto, int cantProducto, float precioUnitario,
+			TipoProducto tipoProducto) {
+		this.idProducto = idProducto;
+		this.nombreProducto = nombreProducto;
+		this.cantProducto = cantProducto;
+		this.precioUnitario = precioUnitario;
+		this.tipoProducto = tipoProducto;
+	}
+	public Producto(int idProducto) {
+		this.idProducto = idProducto;
+		this.nombreProducto = "";
+		this.cantProducto = 0;
+		this.precioUnitario = 0;
+		this.tipoProducto = TipoProducto.MOTOR;
+	}
+	
+	//Getters y setters
+	public int getIdProducto() {
+		return idProducto;
+	}
+	public String getNombreProducto() {
+		return nombreProducto;
+	}
+	public void setNombreProducto(String nombreProducto) {
+		this.nombreProducto = nombreProducto;
+	}
+	public int getCantProducto() {
+		return cantProducto;
+	}
+	public void setCantProducto(int cantProducto) {
+		this.cantProducto = cantProducto;
+	}
+	public float getPrecioUnitario() {
+		return precioUnitario;
+	}
+	public void setPrecioUnitario(float precioUnitario) {
+		this.precioUnitario = precioUnitario;
+	}
+	public TipoProducto getTipoProducto() {
+		return tipoProducto;
+	}
+	public void setTipoProducto(TipoProducto tipoProducto) {
+		this.tipoProducto = tipoProducto;
+	}
+	
+	//toString()
+	@Override
+	public String toString() {
+		return "Producto [idProducto=" + this.idProducto + ", nombreProducto=" + this.nombreProducto + ", cantProducto="
+				+ this.cantProducto + ", precioUnitario=" + this.precioUnitario + ", tipoProducto=" + this.tipoProducto + "]";
+	}
+	
+	
+}

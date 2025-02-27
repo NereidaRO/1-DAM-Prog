@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+package PCK_GestionEmpresa;
+
+/**
+ * Esta clase implementa los métodos de la interfaz
+ */
+public class Gestion {
+
+}

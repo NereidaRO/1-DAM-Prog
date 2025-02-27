@@ -1,0 +1,74 @@
+package PCK_GestionEmpresa;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// Empresa dedicada a la venta de motos y ropa
+		
+		Scanner teclado = new Scanner(System.in);
+		int opcionElegida = 0;
+		boolean salir = true;
+		
+		System.out.println("Bienvenido a la GESTIÓN DE EMPRESA\n"+
+				"----------------------------------\n"+
+				"La empresa se da de alta y se encarga de:\n"+
+	              "\tVenta de productos de ropa\n"+
+	              "\tObjetos relacionado con el mundo de la moto");
+		
+		//Gestion gestion = new Gestion();
+		
+		while (salir) {
+			
+			opcionElegida = menu();
+
+	        switch (opcionElegida) {
+	       
+		        case 1:
+		        	//gestion.crearEmpresa();
+		        	break;
+		        case 2:
+		        	//gestion.crearArticulo();
+		        	break;
+		        case 3:
+		        	//gestion.crearFactura();
+		        	break;
+		        case 4:
+		        	//gestion.mostrarFacturas();
+		        	break;
+		        default:
+		        	salir=false;
+	        }
+	        
+	    }
+		
+		System.out.println("\n----------------------------------"+
+				"\nGracias por usar la aplicación"+
+				"\n----------------------------------");
+		teclado.close();
+	}
+	
+	public static int menu () {
+		int opcion = 0;
+		Scanner teclado = new Scanner (System.in);
+		
+		System.out.println("\nIntroduzca la opción que desea realizar:\n" 
+			    + "1. Introcudir EMPRESA\n" 
+			    + "2. Introducir PRODUCTO\n" 
+			    + "3. Crear FACTURA\n" 
+			    + "4. Mostrar articulo por tipo\n"
+			    + "SALIR --> Pulse cualquier otro número\n"
+			    + "Opcion: \n");
+		
+		try {
+			opcion = teclado.nextInt();
+		} catch (Exception ex1) {
+			System.out.println("Error:" + ex1.getMessage() + "\n" + ex1.toString());
+		}
+
+		// NO CERRAR SCANNER TECLADO ... OS DARÁ ERROR
+		return opcion;
+	}
+
+}

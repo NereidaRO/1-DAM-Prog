@@ -1,0 +1,55 @@
+package PCK_GestionEmpresa;
+
+import java.util.ArrayList;
+
+/**
+ * @author Nereida Rodríguez Orenes 1ºDAM
+ * @since 18/02/2025
+ */
+
+public class Factura {
+	private int numFactura;
+	private String fechaFactura; // dd/mm/aa
+	ArrayList<Producto> listaProductos = new ArrayList<>();
+	//NOTA: en composición con Producto; no hay factura si no hay productos que facturar
+	
+	//Constructores
+	public Factura(int numFactura, String fechaFactura, ArrayList<Producto> listaProductos) {
+		this.numFactura = numFactura;
+		this.fechaFactura = fechaFactura;
+		this.listaProductos = listaProductos;
+	}
+	
+	public Factura(int numFactura) {
+		this.numFactura = numFactura;
+		this.fechaFactura = "01/01/01";
+	}
+	
+	//Getters y setters
+	public int getNumFactura() {
+		return numFactura;
+	}
+
+	public String getFechaFactura() {
+		return fechaFactura;
+	}
+
+	public void setFechaFactura(String fechaFactura) {
+		this.fechaFactura = fechaFactura;
+	}
+
+	public ArrayList<Producto> getListaProductos() {
+		return listaProductos;
+	}
+
+	public void setListaProductos(ArrayList<Producto> listaProductos) {
+		this.listaProductos = listaProductos;
+	}
+
+	//toString()
+	@Override
+	public String toString() {
+		return "Factura [numFactura=" + this.numFactura + ", fechaFactura=" + this.fechaFactura + ", listaProductos="
+				+ this.listaProductos + "]";
+	}
+}

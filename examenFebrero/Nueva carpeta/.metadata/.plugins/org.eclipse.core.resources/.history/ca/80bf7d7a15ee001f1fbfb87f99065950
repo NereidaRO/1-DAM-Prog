@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+package PCK_GestionEmpresa;
+
+/**
+ * 
+ */
+public interface IGestion {
+
+}

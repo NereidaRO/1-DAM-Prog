@@ -1,0 +1,72 @@
+/**
+ * 
+ */
+package PCK_GestionEmpresa;
+
+import java.util.Arrays;
+
+/**
+ * Esta clase implementa los métodos de la interfaz
+ * @author Nereida Rodríguez Orenes 1ºDAM
+ * @since 18/02/2025
+ */
+public class Gestion implements IGestion{
+	private Empresa empresa;
+	Factura [] facturas = new Factura[1];
+	Producto [] productos = new Producto[3];
+	
+	//De la interfaz
+	public boolean crearEmpresa() {
+		boolean result = false;
+		Empresa recogerEmpresa = this.empresa;
+		if (recogerEmpresa.getIdEmpresa() == 0) {
+			
+		}else {
+			System.out.println("Ya hay una empresa creada");
+		}
+		
+		
+		return result;
+	};
+	public boolean crearArticulo() {
+		boolean result = false;
+		return result;
+	};
+	public boolean crearFactura() {
+		boolean result = false;
+		return result;
+	};
+	public void mostrarFactura() {
+		//pasará los toString necesarios
+	}
+	
+	//Constructores
+	public Gestion(Empresa empresa, Factura[] facturas, Producto[] productos) {
+		this.empresa = empresa;
+		this.facturas = facturas;
+		this.productos = productos;
+	};
+	
+	public Gestion(){}
+	
+	//Getters (hay funciones de creación específicas, ver "de la interfaz")
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public Factura[] getFacturas() {
+		return facturas;
+	}
+	public Producto[] getProductos() {
+		return productos;
+	}
+	
+	//toString()
+	@Override
+	public String toString() {
+		return "Gestion [empresa=" + empresa + ", facturas=" + Arrays.toString(facturas) + ", productos="
+				+ Arrays.toString(productos) + "]";
+	}
+
+	
+	
+}

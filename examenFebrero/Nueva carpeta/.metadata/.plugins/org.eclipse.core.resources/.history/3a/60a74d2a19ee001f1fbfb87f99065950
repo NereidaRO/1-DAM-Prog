@@ -1,0 +1,85 @@
+/**
+ * 
+ */
+package PCK_GestionEmpresa;
+
+import java.util.Arrays;
+import java.util.Scanner;
+import PCK_GestionEmpresa.Empresa;
+
+/**
+ * Esta clase implementa los métodos de la interfaz
+ * @author Nereida Rodríguez Orenes 1ºDAM
+ * @since 18/02/2025
+ */
+public class Gestion implements IGestion{
+	private Empresa empresa;
+	Factura [] facturas = new Factura[1];
+	Producto [] productos = new Producto[3];
+	
+	//De la interfaz
+	public boolean crearEmpresa() {
+		boolean result = false;
+		Empresa recogerEmpresa = this.empresa;
+		Scanner sc = new Scanner(System.in);
+		int idEmpresa;
+		String nomEmpresa;
+		
+		if (recogerEmpresa.getIdEmpresa() == 0) {
+			System.out.println("Introduce el ID de la empresa: ");
+			idEmpresa = sc.nextInt();
+			sc.nextLine();
+			System.out.println("Introduce el nombre de la empresa: ");
+			nomEmpresa = sc.nextLine();
+			Empresa empresaCreada = new Empresa(idEmpresa, nomEmpresa);
+			this.empresa = empresaCreada;
+			result = true;
+		}else {
+			System.out.println("Ya hay una empresa creada");
+		}
+		
+		sc.close();
+		return result;
+	};
+	public boolean crearArticulo() {
+		boolean result = false;
+		return result;
+	};
+	public boolean crearFactura() {
+		boolean result = false;
+		return result;
+	};
+	public void mostrarFactura() {
+		//pasará los toString necesarios
+	}
+	
+	//Constructores
+	public Gestion(Empresa empresa, Factura[] facturas, Producto[] productos) {
+		this.empresa = empresa;
+		this.facturas = facturas;
+		this.productos = productos;
+	};
+	
+	public Gestion(){}
+	
+	//Getters (hay funciones de creación específicas, ver "de la interfaz")
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public Factura[] getFacturas() {
+		return facturas;
+	}
+	public Producto[] getProductos() {
+		return productos;
+	}
+	
+	//toString()
+	@Override
+	public String toString() {
+		return "Gestion [empresa=" + empresa + ", facturas=" + Arrays.toString(facturas) + ", productos="
+				+ Arrays.toString(productos) + "]";
+	}
+
+	
+	
+}

@@ -1,0 +1,21 @@
+Realizamos un proyecto donde iremos colocando los siguientes ejemplos de relaciones entre clases, de manera que se pueda asimilar
+a cómo vamos a relacionar las tablas en BD.
+
+Servirá de repaso y cómo relacionar las diversas entidades Clases (correspondientes tablas de BD) a través de nuestro código.
+
+Creamos un proyecto donde habrán diferentes paquetes, uno de ellos para el principal. (PCK_Principal) que contendrá tan solo el fichero de 
+clase "Principal" con el método "main()". Éste irá lanzando los distintos objetos que iremos creando para probar cada uno de los ejemplos, 
+separados en sus paquetes correspondientes. Vemos un ejemplo de estos paquetes.
+
+Crearemos los distintos paquetes, cada uno de ellos, tratará sobre un tipo de relación entre clases. 
+Además, aportará una clase de gestión que irá llamando a las distintas clases.
+La clase con nombre gestión será instancia desde el principal, quien lo lanzará a ejecución.
+
+Ejemplo:
+
+Si queremos probar la relación entre clases de tipo "composición", crearemos el paquete "PCK_Composion".
+Dentro irá la clase "GestionComposicion" y las demás clases que salen en el ejemplo.
+Desde el "main" crearemos una instancia de "GestionComposicion" con el nombre "gestionComposicion".
+Desde su constructor se irán realizando las operaciones de creación de las distintas clases que sean necesarias.
+
+Y así sucesivamente, intentando incorporar ejemplos de cada tipo.

@@ -1,0 +1,38 @@
+package PCK_GestionEmpresa;
+/*
+ * Solo existe una empresa en toda la aplicación
+ * @author Nereida Rodríguez Orenes 1ºDAM
+ * @since 18/02/2025
+ * */
+
+public class Empresa {
+	private int IdEmpresa;
+	private String nomEmpresa;
+	
+	//Constructor
+	public Empresa(int idEmpresa, String nomEmpresa) {
+		this.IdEmpresa = idEmpresa;
+		this.nomEmpresa = nomEmpresa;
+	}
+	public Empresa(int idEmpresa) {
+		this.IdEmpresa = idEmpresa;
+		this.nomEmpresa = "";
+	}
+	
+	//Getters y setters
+	public int getIdEmpresa() {
+		return IdEmpresa;
+	}
+	public String getNomEmpresa() {
+		return nomEmpresa;
+	}
+	public void setNomEmpresa(String nomEmpresa) {
+		this.nomEmpresa = nomEmpresa;
+	}
+	
+	//toString
+	@Override
+	public String toString() {
+		return "Empresa [IdEmpresa=" + this.IdEmpresa + ", nomEmpresa=" + this.nomEmpresa + "]";
+	}
+}

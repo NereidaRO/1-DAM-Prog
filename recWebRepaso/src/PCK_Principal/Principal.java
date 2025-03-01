@@ -37,8 +37,15 @@ public class Principal {
         Figura fig2 = new Figura("Gohan", 222);
         Figura fig3 = new Figura("Bulma", 333);
         Figura fig4 = new Figura("Vegeta", 444);
-        
         Persona pers1 = new Persona(12345678, "Axel");
+        
+        Empresa emp1 = new Empresa("Don Pepito", 1234);
+        Empresa emp2 = new Empresa("Don Jose", 5678);
+        Trabajador tr1 = new Trabajador("Marco Aurelio", 111);
+        Trabajador tr2 = new Trabajador("Cleopatra", 222);
+        Trabajador tr3 = new Trabajador("Julio César", 333);
+        Trabajador tr4 = new Trabajador("Asterix", 444);
+        Trabajador tr5 = new Trabajador("Obelix", 555);
         
         //---------PRUEBAS---------
         //Futbolista y Pelota (sin problemas)
@@ -57,9 +64,19 @@ public class Principal {
       //  ninyo1.usarImpresora();
       
         //Persona y figuras (sin problemas)
-        pers1.pegarFigurita(fig1);
-        pers1.pegarFigurita(fig1);
-        pers1.pegarFigurita(fig4);
+      //  pers1.pegarFigurita(fig1);
+      //  pers1.pegarFigurita(fig1);
+      //  pers1.pegarFigurita(fig4);
+      
+        //Trabajadores y empresas
+        emp1.contratar(tr2);
+        emp1.contratar(tr2);
+        emp2.contratar(tr5);
+        emp2.contratar(tr4);
+        emp2.contratar(tr3);
+        
+        emp1.solicitarInforme(tr5);
+        emp1.solicitarInforme(tr2);
     }
     
 }

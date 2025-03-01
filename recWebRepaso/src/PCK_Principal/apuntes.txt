@@ -26,6 +26,7 @@ te compliques la cabeza, es un ejemplo.
  - Asociación normal N:N --> usuarios y programas
  - Asociación directa 1:1 --> niño e impresora
  - Asociación directa 1:N --> persona y figuras
+ - Asociación directa N:M --> empresas y trabajadores
 
 5. Otras notas
  - En el ejemple de los jefes y los empleados se lía un poco; 13:00 - 26:00 --> es conveniente verlo de nuevo.

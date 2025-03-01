@@ -1,0 +1,25 @@
+En este archivo se detallan los puntos importantes o interesantes del vídeo, de cara a futuros repasos
+
+1. Asociación:
+
+- Normal: las dos clases se pasan datos entre ellas (comunicación mutua). Ejemplo: dos personas hablando, un jefe y su empleado.
+- Directa: una clase se comunica con otra, pero no en viceversa (comunicación no mutua). Ejemplo: mandas un mensaje a la impresora; la impresora no te habla de vuelta.
+
+En cuanto a la multiplicidad, ambos tipos de asociación pueden ser 1:1, 1:N, N:N. En este punto no hay que olvidar el concepto de herencia; esas relaciones no tienen por qué ser
+jerárquicamente lineales.
+
+2. Agregación:
+[Una clase no depende de la otra]
+
+La relación se da solo si ambos existen. Por ejemplo, Miguel y Marcos empiezan a salir; si Marcos se va, la relación desaparece, pero Miguel sigue existiendo.
+
+3. Composición:
+[Una clase sí depende de la otra]
+
+La relación se da solo si ambos existen, como en el caso anterior, pero si desaparece una clase, la otra también lo hace. Por ejemplo, un iPhone y su batería.
+Si la batería se rompe, el iPhone deja de funcionar. No lo mires más allá: claro que puedes cambiar la batería, pero Marcos y Miguel también pueden ser poliamorosos, no
+te compliques la cabeza, es un ejemplo.
+
+4. Ejemplos
+ - Asociación normal 1:1 --> un futbolista y su pelota
+ - Asociación normal 1:M --> jefe y sus empleados

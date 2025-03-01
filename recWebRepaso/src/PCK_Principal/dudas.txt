@@ -1,0 +1,17 @@
+Dudas para preguntar en clase después de la entrega.
+
+- En las clases Pelota y Futbolista (asociación normal 1:1), en los prints no pone "this.atributo", solo el atributo. ¿Es mejor no ponerlo? En algunos 
+ejercicios anteriores, parecía obligatorio señalar que era del propio objeto usando this. ¿Cómo sé cuando poner this? Me he vuelto a liar.
+
+- En las mismas clases, ¿por qué usa un método que se inventa para crear la pelota (setPelota()) en vez de usar el constructor de Pelota.
+
+
+
+
+
+
+
+
+
+
+- No he entendido qué hay que hacer con las clases "Gestión"; el chico del vídeo no las usa.

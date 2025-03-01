@@ -16,10 +16,19 @@ public class Principal {
         //CREACIÓN DE OBJETOS
         Futbolista f1 = new Futbolista("Juan", 18);
         Pelota p1 = new Pelota("Adidas", "Brazuka", f1);
+        Jefe jefe = new Jefe("Marcos", 12345678);
+        Empleado e1 = new Empleado(1, "Julio", 1500.3f);
+        Empleado e2 = new Empleado(2, "Marga", 1507.3f);
+        Empleado e3 = new Empleado(3, "Carla", 1508.3f);
+        Empleado e4 = new Empleado(1, "Tyron", 1600.3f);
         
         //PRUEBAS
         //Futbolista y Pelota
-        f1.saludar();
+      //  f1.saludar();
+        
+        //Jefe y empleados
+        jefe.contratarEmpleado(e4);
+        jefe.contratarEmpleado(e4);
     }
     
 }

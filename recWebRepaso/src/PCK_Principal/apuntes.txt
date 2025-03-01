@@ -23,3 +23,11 @@ te compliques la cabeza, es un ejemplo.
 4. Ejemplos
  - Asociación normal 1:1 --> un futbolista y su pelota
  - Asociación normal 1:M --> jefe y sus empleados
+ - Asociación normal N:N --> usuarios y programas
+
+5. Otras notas
+ - En el ejemple de los jefes y los empleados se lía un poco; 13:00 - 26:00 --> es conveniente verlo de nuevo.
+Lo que acaba creando en una función para contratar (añadir) objetos empleado al array del objeto jefe; por eso, aunque los empleados tienen un atributo jefe, este solo se rellenará
+cuando sean contratados.
+ - No sé por qué, ya que tengo el código igual pero, cuando agrego dos veces el mismo empleado, como e es null, me salta una excepción (java.lang.NullPointerException). Así que voy a
+retocar a mano la función.

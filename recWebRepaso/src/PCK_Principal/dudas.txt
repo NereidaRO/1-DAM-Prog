@@ -13,3 +13,6 @@ ejemplo de Jefe y Empleado (contratarEmpleado()).
 - No he entendido qué hay que hacer con las clases "Gestión"; el chico del vídeo no las usa.
 
 - Tampoco hay ejemplos, en el vídeo, de Composición y Agregación, ¿debo buscarlos yo aparte? ¿O no son para esta entrega? En el enunciado, el ejemplo es PCK_Composicion
+
+- Thanya dice que en esta práctica hay que pasar la base de datos "Gardening" a un esquema de asociaciones, pero yo he entendido que en esta práctica
+hay que agrupar los ejemplos del vídeo y alguno más, y que lo que ella dice de "Gardening" es la siguiente práctica. ¿Quién tiene razón?

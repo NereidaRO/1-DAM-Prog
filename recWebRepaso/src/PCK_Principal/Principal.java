@@ -4,6 +4,8 @@
  */
 package PCK_Principal;
 import PCK_Asociation.*;
+import PCK_Aggregation.*;
+import PCK_Composition.*;
 
 /**
  * @since 27/02/2025
@@ -47,6 +49,13 @@ public class Principal {
         Trabajador tr4 = new Trabajador("Asterix", 444);
         Trabajador tr5 = new Trabajador("Obelix", 555);
         
+        Ordenador ord1 = new Ordenador("Asus", "Rog Strix");
+        Ordenador ord2 = new Ordenador ("HP", "ModeloFancy");
+        Raton r1 = new Raton("Logitech", 10f);
+        Raton r2 = new Raton("Mars Gaming", 8.3f);
+        
+        Movil mov1 = new Movil("iPhone", "13 Pro", 50000, "Apple");
+        
         //---------PRUEBAS---------
         //Futbolista y Pelota (sin problemas)
       //  f1.saludar();
@@ -69,14 +78,20 @@ public class Principal {
       //  pers1.pegarFigurita(fig4);
       
         //Trabajadores y empresas
-        emp1.contratar(tr2);
-        emp1.contratar(tr2);
-        emp2.contratar(tr5);
-        emp2.contratar(tr4);
-        emp2.contratar(tr3);
+       // emp1.contratar(tr2);
+       // emp1.contratar(tr2);
+       // emp2.contratar(tr5);
+       // emp2.contratar(tr4);
+       // emp2.contratar(tr3);
         
-        emp1.solicitarInforme(tr5);
-        emp1.solicitarInforme(tr2);
+       // emp1.solicitarInforme(tr5);
+       // emp1.solicitarInforme(tr2);
+       
+       //Agregación: ordenador + ratón
+       ord1.enchufaRaton(r2);
+       ord2.enchufaRaton("Trust", 11.3f);
+       
+       //Composición: movil + batería --> arriba
     }
     
 }

@@ -30,6 +30,9 @@ public class Principal {
         Programa pr3 = new Programa("Eclipse", 5.5f);
         Programa pr4 = new Programa("Slack", 1.2f);
         
+        Impresora imp1 = new Impresora("HP", "Infinity");
+        Ninyo ninyo1 = new Ninyo("Matías", imp1);
+        
         //PRUEBAS
         //Futbolista y Pelota
       //  f1.saludar();
@@ -39,10 +42,12 @@ public class Principal {
       //  jefe.contratarEmpleado(e4);
       
         //Usuarios y programas (sin problemas)
-        u1.instalarPrograma(pr2);
-        u1.instalarPrograma(pr2); 
-        u2.instalarPrograma(pr3);
+      //  u1.instalarPrograma(pr2);
+      //  u1.instalarPrograma(pr2); 
+      //  u2.instalarPrograma(pr3);
         
+        //Niño e impresora
+        ninyo1.usarImpresora();
     }
     
 }

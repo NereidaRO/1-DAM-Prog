@@ -13,7 +13,7 @@ import PCK_Asociation.*;
  */
 public class Principal {
     public static void main(String[] args) {
-        //CREACIÓN DE OBJETOS
+        //---------CREACIÓN DE OBJETOS---------
         Futbolista f1 = new Futbolista("Juan", 18);
         Pelota p1 = new Pelota("Adidas", "Brazuka", f1);
         
@@ -33,8 +33,15 @@ public class Principal {
         Impresora imp1 = new Impresora("HP", "Infinity");
         Ninyo ninyo1 = new Ninyo("Matías", imp1);
         
-        //PRUEBAS
-        //Futbolista y Pelota
+        Figura fig1 = new Figura("Goku", 111);
+        Figura fig2 = new Figura("Gohan", 222);
+        Figura fig3 = new Figura("Bulma", 333);
+        Figura fig4 = new Figura("Vegeta", 444);
+        
+        Persona pers1 = new Persona(12345678, "Axel");
+        
+        //---------PRUEBAS---------
+        //Futbolista y Pelota (sin problemas)
       //  f1.saludar();
         
         //Jefe y empleados (ver dudas)
@@ -46,8 +53,13 @@ public class Principal {
       //  u1.instalarPrograma(pr2); 
       //  u2.instalarPrograma(pr3);
         
-        //Niño e impresora
-        ninyo1.usarImpresora();
+        //Niño e impresora (sin problemas)
+      //  ninyo1.usarImpresora();
+      
+        //Persona y figuras (sin problemas)
+        pers1.pegarFigurita(fig1);
+        pers1.pegarFigurita(fig1);
+        pers1.pegarFigurita(fig4);
     }
     
 }

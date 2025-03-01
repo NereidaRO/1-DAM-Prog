@@ -24,7 +24,8 @@ te compliques la cabeza, es un ejemplo.
  - Asociación normal 1:1 --> un futbolista y su pelota
  - Asociación normal 1:M --> jefe y sus empleados
  - Asociación normal N:N --> usuarios y programas
- - Asociación directa 1:N --> niño e impresora
+ - Asociación directa 1:1 --> niño e impresora
+ - Asociación directa 1:N --> persona y figuras
 
 5. Otras notas
  - En el ejemple de los jefes y los empleados se lía un poco; 13:00 - 26:00 --> es conveniente verlo de nuevo.

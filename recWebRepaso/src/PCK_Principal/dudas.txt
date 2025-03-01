@@ -8,6 +8,7 @@ ejemplo de Jefe y Empleado (contratarEmpleado()).
 
 - He usado try-catch para la excepción cuando Empleado e es null, pero no sé por qué me sale a mí la excepción y no a él si tengo el mismo código que el vídeo.
 
+- ¿Por qué escribe los mensajes de pantalla fuera del while?
 
 
 
@@ -18,3 +19,4 @@ ejemplo de Jefe y Empleado (contratarEmpleado()).
 
 
 - No he entendido qué hay que hacer con las clases "Gestión"; el chico del vídeo no las usa.
+- Tampoco hay ejemplos, en el vídeo, de Composición y Agregación, ¿debo buscarlos yo aparte? ¿O no son para esta entrega? En el enunciado, el ejemplo es PCK_Composicion

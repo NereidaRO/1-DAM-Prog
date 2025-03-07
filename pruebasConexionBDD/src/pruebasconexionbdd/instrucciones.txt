@@ -1,0 +1,156 @@
+Tras una búsqueda en learn.microsoft y StackOverflow en la que no me he enterado de nada y unas clases en las que no he entendido ni 
+3 palabras seguidas, he optado por preguntarle esto a ChatGPT:
+
+"En clase estamos intentando conectar una base de datos local, generada en MS SQL Server, con Eclipse o NetBeans, 
+con la intención de poder coger datos de la base de datos o mandar nuevos registros mediante un programa que creemos con Java. 
+Mi problema es que no encuentro cómo hacer esa conexión".
+
+La IA me ha respondido:
+
+Para conectar una base de datos de **MS SQL Server** con **Java** en **Eclipse o NetBeans**, necesitas seguir estos pasos:
+
+---
+
+### **1️⃣ Descargar y añadir el conector JDBC**
+Para que Java pueda interactuar con SQL Server, necesitas el **controlador JDBC de Microsoft**.
+
+🔹 **Descarga el JDBC Driver:**
+1. Ve a [Microsoft JDBC Driver for SQL Server](https://learn.microsoft.com/es-es/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server).
+2. Descarga la versión más reciente.
+3. Extrae el archivo `.zip` y dentro encontrarás `mssql-jdbc-xx.x.x.jreXX.jar` (elige el de tu versión de Java).
+
+🔹 **Añadirlo en Eclipse o NetBeans:**
+- En **Eclipse**:
+  1. Click derecho en tu proyecto ➝ **Build Path** ➝ **Configure Build Path**.
+  2. Ve a la pestaña **Libraries** ➝ **Add External JARs**.
+  3. Busca y selecciona `mssql-jdbc-xx.x.x.jreXX.jar`.
+  4. Aplica los cambios.
+
+- En **NetBeans**:
+  1. Click derecho en **Libraries** dentro de tu proyecto.
+  2. Selecciona **Add JAR/Folder**.
+  3. Añade el `mssql-jdbc-xx.x.x.jreXX.jar`.
+
+---
+
+### **2️⃣ Habilitar la autenticación en SQL Server**
+🔹 **Método 1: Autenticación con usuario y contraseña**
+Asegúrate de que SQL Server acepta autenticación con usuario y contraseña:
+1. Abre **SQL Server Management Studio (SSMS)**.
+2. Click derecho en tu servidor ➝ **Propiedades**.
+3. Ve a **Seguridad** ➝ Activa **Modo de autenticación SQL Server y Windows**.
+4. Reinicia el servidor.
+
+🔹 **Método 2: Usar autenticación integrada**
+Si usas autenticación de Windows, necesitarás el `integratedSecurity=true` en la URL de conexión.
+
+---
+
+### **3️⃣ Crear la conexión en Java**
+Aquí tienes un ejemplo de código Java para conectarte a SQL Server desde Eclipse o NetBeans:
+
+#### **Ejemplo con usuario y contraseña**
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConexionSQL {
+    public static void main(String[] args) {
+        // Datos de la conexión
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=NombreDeTuBD";
+        String usuario = "tu_usuario";
+        String contraseña = "tu_contraseña";
+
+        try {
+            // Cargar el driver
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            
+            // Conectar a la base de datos
+            Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+            System.out.println("Conexión exitosa a la base de datos.");
+            
+            // Cierra la conexión
+            conexion.close();
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error: No se encontró el driver JDBC.");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Error: No se pudo conectar a la base de datos.");
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+#### **Ejemplo con autenticación de Windows**
+Si usas autenticación integrada de Windows, usa esta URL de conexión:
+```java
+String url = "jdbc:sqlserver://localhost:1433;databaseName=NombreDeTuBD;integratedSecurity=true";
+```
+⚠ Para esto, el driver JDBC debe estar en la carpeta de **Java bin** y necesitas el archivo `.dll` de autenticación.
+
+---
+
+### **4️⃣ Resolver posibles errores**
+💡 **Si obtienes un error de conexión:**
+- **Verifica el puerto** de SQL Server: Abre SSMS y ejecuta:
+  ```sql
+  SELECT local_net_address, local_tcp_port FROM sys.dm_exec_connections
+  ```
+- **Activa TCP/IP en SQL Server Configuration Manager**:
+  1. Abre **SQL Server Configuration Manager**.
+  2. Ve a **Protocols for SQL Server**.
+  3. Activa **TCP/IP** y reinicia el servicio.
+
+---
+
+### **5️⃣ Realizar consultas SQL desde Java**
+Después de conectar, puedes ejecutar consultas:
+
+#### **Ejemplo de consulta SELECT**
+```java
+import java.sql.*;
+
+public class ConsultaSQL {
+    public static void main(String[] args) {
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=NombreDeTuBD";
+        String usuario = "tu_usuario";
+        String contraseña = "tu_contraseña";
+
+        try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+             Statement stmt = conexion.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM tu_tabla")) {
+            
+            while (rs.next()) {
+                System.out.println("ID: " + rs.getInt("id") + ", Nombre: " + rs.getString("nombre"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+#### **Ejemplo de INSERT**
+```java
+try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+     PreparedStatement pstmt = conexion.prepareStatement("INSERT INTO tu_tabla (nombre) VALUES (?)")) {
+
+    pstmt.setString(1, "NuevoNombre");
+    pstmt.executeUpdate();
+    System.out.println("Registro insertado correctamente.");
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+```
+
+---
+
+### **Resumen**
+✅ Descarga el **driver JDBC** y agrégalo a Eclipse o NetBeans.  
+✅ Configura **SQL Server** para permitir autenticación con usuario y contraseña o integrada.  
+✅ Usa la clase `DriverManager` para conectar tu base de datos.  
+✅ Ejecuta consultas usando `Statement` o `PreparedStatement`.
+
+¿Tienes algún error específico en tu código o configuración? Puedo ayudarte a depurarlo. 🚀

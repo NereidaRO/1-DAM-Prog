@@ -1,0 +1,191 @@
+En cuanto a los procedures (tema de BADA que no nos da tiempo a ver este año y que quiero ver en verano), el profesor
+de Programación los ha nombrado. Al preguntarle a ChatGPT qué es eso, me lo ha explicado como que son objetos que
+se pueden crear en SQL como abreviaciones. Al hacer "exec nombreProcedure", este procedure se activará, 
+llevando a cabo la tarea (un select, update o lo que hayas definido antes). Pero para hacerlo por Java, es más difícil.
+El código-ejemplo, explicado, es:
+
+¡Por supuesto, Nereida! Vamos a analizar línea por línea el código de Java para ejecutar un **Stored Procedure** en SQL Server. 📌
+
+---
+
+### **Código completo:**
+```java
+import java.sql.*;
+
+public class EjecutarProcedure {
+    public static void main(String[] args) {
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=MiBaseDeDatos";
+        String usuario = "tu_usuario";
+        String contraseña = "tu_contraseña";
+
+        try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+             CallableStatement cs = conexion.prepareCall("{call ObtenerUsuarios}")) {
+
+            ResultSet rs = cs.executeQuery();
+
+            while (rs.next()) {
+                System.out.println("ID: " + rs.getInt("id") + ", Nombre: " + rs.getString("nombre"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+---
+
+## 🔍 **Explicación línea a línea**
+### **1️⃣ Importar las librerías necesarias**
+```java
+import java.sql.*;
+```
+📌 Aquí importamos las librerías de Java necesarias para conectarnos a SQL Server y manejar la base de datos.  
+
+- `java.sql.Connection` → Para establecer la conexión con la base de datos.  
+- `java.sql.DriverManager` → Para obtener la conexión a través del **JDBC**.  
+- `java.sql.CallableStatement` → Para ejecutar **Stored Procedures**.  
+- `java.sql.ResultSet` → Para manejar los resultados de una consulta.  
+
+---
+
+### **2️⃣ Definir la clase principal y el método `main`**
+```java
+public class EjecutarProcedure {
+    public static void main(String[] args) {
+```
+📌 Esto define la clase `EjecutarProcedure` y su método `main()`, que es donde empieza a ejecutarse el programa.
+
+---
+
+### **3️⃣ Especificar los datos de conexión**
+```java
+String url = "jdbc:sqlserver://localhost:1433;databaseName=MiBaseDeDatos";
+String usuario = "tu_usuario";
+String contraseña = "tu_contraseña";
+```
+📌 Aquí definimos los datos de conexión para SQL Server:
+
+- `localhost:1433` → Indica que el servidor SQL está en la misma computadora y usa el puerto **1433** (el predeterminado de SQL Server).
+- `databaseName=MiBaseDeDatos` → Especifica el nombre de la base de datos a la que queremos conectarnos.
+- `usuario` y `contraseña` → Son las credenciales para acceder a SQL Server.
+
+**👀 Importante:** Si usas autenticación de Windows en lugar de usuario/contraseña, la URL cambiaría a:
+```java
+String url = "jdbc:sqlserver://localhost:1433;databaseName=MiBaseDeDatos;integratedSecurity=true";
+```
+
+---
+
+### **4️⃣ Establecer conexión con la base de datos**
+```java
+try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña);
+```
+📌 Aquí usamos `DriverManager.getConnection(url, usuario, contraseña);` para conectarnos a SQL Server.
+
+- Si la conexión es exitosa, se almacena en el objeto `conexion`.
+- La sintaxis `try (...)` con paréntesis usa **"try-with-resources"**, lo que significa que la conexión se **cerrará automáticamente** cuando el bloque `try` termine.
+
+---
+
+### **5️⃣ Preparar la ejecución del Stored Procedure**
+```java
+CallableStatement cs = conexion.prepareCall("{call ObtenerUsuarios}");
+```
+📌 Aquí creamos un objeto `CallableStatement`, que sirve para ejecutar un **Stored Procedure** en SQL Server.
+
+- `prepareCall("{call ObtenerUsuarios}")` → Indica que vamos a llamar al procedimiento almacenado llamado `ObtenerUsuarios`.  
+- **Los `{call NombreDelProcedure}`** son la forma estándar de llamar a procedimientos almacenados en SQL Server desde Java.  
+
+Si el procedimiento tuviera **parámetros**, lo pasaríamos con `?` dentro de los paréntesis, así:
+```java
+CallableStatement cs = conexion.prepareCall("{call ObtenerUsuarioPorID(?)}");
+cs.setInt(1, 5);  // Suponiendo que el procedimiento recibe un ID como parámetro
+```
+
+---
+
+### **6️⃣ Ejecutar la consulta**
+```java
+ResultSet rs = cs.executeQuery();
+```
+📌 Ejecutamos el procedimiento almacenado con `executeQuery()`, que devuelve un **ResultSet** (un conjunto de filas de la base de datos).
+
+- **Si el Stored Procedure devuelve datos (como un `SELECT *`), usamos `executeQuery()`**.
+- **Si el Stored Procedure solo realiza acciones (como `INSERT`, `UPDATE`, `DELETE`), usamos `executeUpdate()` en lugar de `executeQuery()`**.
+
+---
+
+### **7️⃣ Leer los resultados**
+```java
+while (rs.next()) {
+    System.out.println("ID: " + rs.getInt("id") + ", Nombre: " + rs.getString("nombre"));
+}
+```
+📌 Aquí recorremos los resultados obtenidos en `rs` (el `ResultSet`) con un `while`.
+
+- `rs.next()` → Avanza a la siguiente fila de resultados.
+- `rs.getInt("id")` → Obtiene el valor de la columna `id` como un número entero.
+- `rs.getString("nombre")` → Obtiene el valor de la columna `nombre` como una cadena de texto.
+- `System.out.println(...)` → Muestra cada fila en la consola.
+
+Ejemplo de salida en consola si la tabla tiene estos datos:
+| id | nombre  |
+|----|--------|
+| 1  | Ana    |
+| 2  | Pedro  |
+
+👀 La salida en consola sería:
+```
+ID: 1, Nombre: Ana
+ID: 2, Nombre: Pedro
+```
+
+---
+
+### **8️⃣ Manejo de errores**
+```java
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+```
+📌 Si hay un error de conexión o ejecución del Stored Procedure, se captura con `catch (SQLException e)`.
+
+- `e.printStackTrace();` → Muestra el error en la consola para que podamos depurarlo.
+
+Errores comunes que podrías ver:
+1. **"The TCP/IP connection to the host failed"** → SQL Server no está configurado para aceptar conexiones remotas.
+2. **"Login failed for user"** → El usuario o la contraseña son incorrectos.
+3. **"Could not find stored procedure"** → El procedimiento almacenado no existe o el nombre es incorrecto.
+
+---
+
+### **✅ Resumen rápido**
+📌 Este programa:
+1. **Se conecta** a SQL Server.
+2. **Ejecuta un Stored Procedure (`ObtenerUsuarios`)**.
+3. **Recorre los resultados y los imprime** en consola.
+4. **Maneja posibles errores**.
+
+---
+
+## **🔥 Extra: Cómo ejecutar un procedimiento con parámetros**
+Si el procedimiento `ObtenerUsuarioPorID` recibe un **ID** como parámetro, el código en Java sería:
+
+```java
+CallableStatement cs = conexion.prepareCall("{call ObtenerUsuarioPorID(?)}");
+cs.setInt(1, 5);  // Pasamos el valor 5 al parámetro
+ResultSet rs = cs.executeQuery();
+```
+
+Esto equivaldría a ejecutar en SQL:
+```sql
+EXEC ObtenerUsuarioPorID 5;
+```
+
+---
+
+### **🚀 Ahora tienes el control!**
+Ya entiendes **línea por línea** cómo conectar Java con SQL Server usando Stored Procedures. 🎯
+
+Si tienes dudas o errores al probarlo, dime y lo solucionamos juntas. ¡Vamos a por ello! 🚀😃

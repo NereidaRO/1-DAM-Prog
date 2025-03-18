@@ -1,0 +1,29 @@
+----ENUNCIADO----
+
+Se realizarán varios de los ejemplos de los apuntes donde el alumno probará y demostrará que entiende cómo se realiza 
+la apertura de ficheros, lectura y escritura de diversos tipos. Intentará realizar un ejemplo para cada tipo de lectura. Se incluirá 
+capturas de pantalla de los pasos que ha ido realizando, tanto de su código, como de los resultados 
+(que serán en todo caso los ficheros creados y su contenido, en caso de haber introducido textos en ellos). 
+Probará también, para los "try-catch", que se genera un fichero de tipo secuencial y cronológico, poniendo una línea detrás de 
+las que ya hubieran en el fichero de tipo .log. 
+
+Para ello, tendrá creado un proyecto que se llame algo así como... "TratamientoDeFicheros". Tendrá un paquete principal donde incluir la 
+clase "Principal" con el método "main()". Después irá incluyendo distintos packetes para tener organizado el proyecto, donde cada uno de ellos contendrá 
+una clase "GestionNNN" con los diversos métodos que se quiera probar según los apuntes. NNN será parte del nombre que quiera ir probando. 
+
+Se entregará el proyecto comprimido más un fichero .pdf aparte con las capturas oportunas.
+
+----CONSIDERACIONES----
+
+1. Hay que documentar cada método: parámetros de entrada, salida y qué hace.
+2. Debe haber un try-catch
+3. Este trabajo es lo que va a usar como examen
+
+----ESTRUCTURA DE ARCHIVOS PROPUESTA----
+
+PCK_Principal -> Principal.java
+PCK_Byte -> GestionFlujoBytes.java
+PCK_Caracter -> GestionFlujoCaracteres.java
+PCK_Registro -> GestionTemporalLog.java
+PCK_Acceso -> GestionAccesos.java
+PCK_Ficheros -> GestionArbolFicheros.java

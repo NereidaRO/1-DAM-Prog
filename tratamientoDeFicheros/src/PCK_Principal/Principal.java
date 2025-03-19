@@ -6,6 +6,7 @@ package PCK_Principal;
 import PCK_Acceso.*;
 import PCK_Byte.*;
 import PCK_Caracter.*;
+import PCK_Ficheros.*;
 
 /**
  * @since 18/03/2025
@@ -21,6 +22,7 @@ public class Principal {
         GestionFlujoBytes flujoByte = new GestionFlujoBytes("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         GestionFlujoCaracteres flujoChar = new GestionFlujoCaracteres("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         GestionAcceso gestAcc = new GestionAcceso("C:\\Users\\Asus\\Desktop\\ejemplos\\");
+        GestionArbolFicheros gestFich = new GestionArbolFicheros("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         byte[] javaMsg = {74, 65, 86, 65};
         byte[] msg2 = {65, 80, 82, 69, 78, 68, 73, 69, 78, 68, 79, 32};
         String cadena1 = "Aprendiendo ";
@@ -57,9 +59,20 @@ public class Principal {
         //flujoChar.leerArrayCar(arrayChar);
         //flujoChar.leerString(cadena2);
         
-        //Prueba acceso secuencial
+        //Pruebas de acceso
         //gestAcc.accederSecuencial("accesoSecuencial.txt", javaMsg, msg2);
         //gestAcc.sobreescrituraDui("fichOrigen.txt", "fichDestino.txt");
-        gestAcc.accesoDirecto("accDirecto.txt");
+        //gestAcc.accesoDirecto("accDirecto.txt");
+        
+        //Pruebas de ficheros y directorios
+        //gestFich.crearFD("directorio", "archivoNuevo.txt");
+        //gestFich.eliminarFD("directorio", "archivoNuevo.txt");
+        //gestFich.tipoArchivo("escritura1.bin");
+        //System.out.println("----");
+        //gestFich.tipoArchivo("carpeta");
+        //gestFich.buscarPadre("escritura1.bin");
+        //gestFich.gestionarPermiso("r", "escritura1.bin");
+        //gestFich.gestionarPermiso("w", "escritura1.bin");
+        //gestFich.gestionarPermiso("x", "escritura1.bin");
     }
 }

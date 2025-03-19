@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package PCK_Principal;
+import PCK_Acceso.*;
 import PCK_Byte.*;
 import PCK_Caracter.*;
 
@@ -19,6 +20,7 @@ public class Principal {
         //Creación de objetos
         GestionFlujoBytes flujoByte = new GestionFlujoBytes("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         GestionFlujoCaracteres flujoChar = new GestionFlujoCaracteres("C:\\Users\\Asus\\Desktop\\ejemplos\\");
+        GestionAcceso gestAcc = new GestionAcceso("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         byte[] javaMsg = {74, 65, 86, 65};
         byte[] msg2 = {65, 80, 82, 69, 78, 68, 73, 69, 78, 68, 79, 32};
         String cadena1 = "Aprendiendo ";
@@ -53,6 +55,11 @@ public class Principal {
         //flujoChar.leerCarBuffer("escrituraCarBuffer.txt");
         //flujoChar.leerLinea("escrituraCar1.txt");
         //flujoChar.leerArrayCar(arrayChar);
-        flujoChar.leerString(cadena2);
+        //flujoChar.leerString(cadena2);
+        
+        //Prueba acceso secuencial
+        //gestAcc.accederSecuencial("accesoSecuencial.txt", javaMsg, msg2);
+        //gestAcc.sobreescrituraDui("fichOrigen.txt", "fichDestino.txt");
+        gestAcc.accesoDirecto("accDirecto.txt");
     }
 }

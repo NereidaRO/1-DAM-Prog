@@ -36,6 +36,12 @@ public class GestionTemporalLog {
     public void setRuta(String ruta) {
         this.ruta = ruta;
     }
+
+    //toString
+    @Override
+    public String toString() {
+        return "GestionTemporalLog{" + "ruta=" + ruta + ", registros=" + registros + '}';
+    }
     
     //gestión de registros
     public void addToList(int id, String nombre){

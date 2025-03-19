@@ -45,7 +45,7 @@ public class Registro {
         this.fechaHora = fechaHora;
     }
 
-    //Esto es importante: hay que meter estos strings a un documento de registros
+    //Esto es importante: hay que meter estos strings a un documento.txt de registros
     @Override
     public String toString() {
         return "Registro{" + "id=" + id + ", nombre=" + nombre + ", fechaHora=" + fechaHora + '}';

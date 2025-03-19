@@ -76,6 +76,7 @@ public class GestionTemporalLog {
                     bw.write(regi);
                     bw.newLine();
                 }
+                System.out.println("Registros añadidos correctamente al archivo txt");
                 bw.close();
                 fw.close();
             }catch(IOException ioe){

@@ -7,6 +7,7 @@ import PCK_Acceso.*;
 import PCK_Byte.*;
 import PCK_Caracter.*;
 import PCK_Ficheros.*;
+import PCK_Registro.*;
 
 /**
  * @since 18/03/2025
@@ -23,11 +24,18 @@ public class Principal {
         GestionFlujoCaracteres flujoChar = new GestionFlujoCaracteres("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         GestionAcceso gestAcc = new GestionAcceso("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         GestionArbolFicheros gestFich = new GestionArbolFicheros("C:\\Users\\Asus\\Desktop\\ejemplos\\");
+        GestionTemporalLog gestLog = new GestionTemporalLog("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         byte[] javaMsg = {74, 65, 86, 65};
         byte[] msg2 = {65, 80, 82, 69, 78, 68, 73, 69, 78, 68, 79, 32};
         String cadena1 = "Aprendiendo ";
         String cadena2 = "JAVA";
         char[] arrayChar = "huevos rotos con jamón".toCharArray();
+        
+        //Pruebas de gestión de registros
+        gestLog.addToList(1, "registro-inicial");
+        gestLog.addToList(2, "registro-segundo");
+        gestLog.addToList(3, "registro-tercero");
+        gestLog.addTxt("registros.txt");
         
         //Pruebas con bytes (escritura)
         //flujoByte.escribirBinario("escritura1.bin");
@@ -74,5 +82,7 @@ public class Principal {
         //gestFich.gestionarPermiso("r", "escritura1.bin");
         //gestFich.gestionarPermiso("w", "escritura1.bin");
         //gestFich.gestionarPermiso("x", "escritura1.bin");
+        
+        
     }
 }

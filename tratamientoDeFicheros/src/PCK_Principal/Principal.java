@@ -3,10 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package PCK_Principal;
+import PCK_Byte.*;
 
 /**
- *
- * @author Asus
+ * @since 18/03/2025
+ * @author Nereida Rodríguez Orenes 1ºDAM
  */
 public class Principal {
 
@@ -14,7 +15,25 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Creación de objetos
+        GestionFlujoBytes flujoByte = new GestionFlujoBytes("C:\\Users\\Asus\\Desktop\\ejemplos\\");
+        byte[] javaMsg = {74, 65, 86, 65};
+        byte[] msg2 = {65, 80, 82, 69, 78, 68, 73, 69, 78, 68, 79, 32};
+        
+        //Pruebas con bytes (escritura)
+        //flujoByte.escribirBinario("escritura1.bin");
+        //flujoByte.escribirBinarioBuffer("escrituraBuffer1.bin");
+        //flujoByte.escribirPrimitivo("primitivoString.bin", "cadena prueba");
+        //flujoByte.escribirPrimitivo("primitivoInt.bin", 22);
+        //flujoByte.escribirArray("arrayBinarios.bin");
+        //flujoByte.imprimirByte("printByte.bin");
+        
+        //Pruebas con bytes (escrituras)
+        //flujoByte.leerBinario("escritura1.bin");
+        //flujoByte.leerBinarioBuffer("escrituraBuffer1.bin");
+        //flujoByte.leerPrimitivo("primitivoString.bin", "text");
+        //flujoByte.leerPrimitivo("primitivoInt.bin", "int"); 
+        //flujoByte.leerArrayByte(javaMsg);
+        flujoByte.leerByteMultiple("arrayBinarios.bin", msg2);
     }
-    
 }

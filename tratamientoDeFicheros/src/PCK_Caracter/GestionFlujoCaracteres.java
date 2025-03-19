@@ -7,6 +7,9 @@ package PCK_Caracter;
 /**
  * @since 18/03/2025
  * @author Nereida Rodríguez Orenes 1ºDAM
+ * Esta clase contiene los métodos necesarios para los ejemplos de lectura y escritura de archivos de texto (flujo de caracteres).
+ * El atributo es la ruta de la carpeta donde crear el archivo; el nombre del archivo que se debe crear se especifica
+ * en los propios métodos.
  */
 public class GestionFlujoCaracteres {
     private String ruta;

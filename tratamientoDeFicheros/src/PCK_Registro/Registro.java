@@ -5,10 +5,9 @@
 package PCK_Registro;
 
 /**
- * @since 18/03/2025
- * @author Nereida Rodríguez Orenes 1ºDAM
- * Los objetos de esta clase manejarán los que se creen en la clase Registro.
+ *
+ * @author Asus
  */
-public class GestionTemporalLog {
+public class Registro {
     
 }

@@ -4,6 +4,7 @@
  */
 package PCK_Principal;
 import PCK_Byte.*;
+import PCK_Caracter.*;
 
 /**
  * @since 18/03/2025
@@ -17,8 +18,12 @@ public class Principal {
     public static void main(String[] args) {
         //Creación de objetos
         GestionFlujoBytes flujoByte = new GestionFlujoBytes("C:\\Users\\Asus\\Desktop\\ejemplos\\");
+        GestionFlujoCaracteres flujoChar = new GestionFlujoCaracteres("C:\\Users\\Asus\\Desktop\\ejemplos\\");
         byte[] javaMsg = {74, 65, 86, 65};
         byte[] msg2 = {65, 80, 82, 69, 78, 68, 73, 69, 78, 68, 79, 32};
+        String cadena1 = "Aprendiendo ";
+        String cadena2 = "JAVA";
+        char[] arrayChar = "huevos rotos con jamón".toCharArray();
         
         //Pruebas con bytes (escritura)
         //flujoByte.escribirBinario("escritura1.bin");
@@ -28,12 +33,26 @@ public class Principal {
         //flujoByte.escribirArray("arrayBinarios.bin");
         //flujoByte.imprimirByte("printByte.bin");
         
-        //Pruebas con bytes (escrituras)
+        //Pruebas con bytes (lectura)
         //flujoByte.leerBinario("escritura1.bin");
         //flujoByte.leerBinarioBuffer("escrituraBuffer1.bin");
         //flujoByte.leerPrimitivo("primitivoString.bin", "text");
         //flujoByte.leerPrimitivo("primitivoInt.bin", "int"); 
         //flujoByte.leerArrayByte(javaMsg);
-        flujoByte.leerByteMultiple("arrayBinarios.bin", msg2);
+        //flujoByte.leerByteMultiple("arrayBinarios.bin", msg2);
+        
+        //Pruebas con caracteres (escritura)
+        //flujoChar.escribirCar("escrituraCar1.txt");
+        //flujoChar.escribirCarBuffer("escrituraCarBuffer.txt");
+        //flujoChar.escribirCarArray("carArray.txt");
+        //flujoChar.imprimirCar("imprimirCar.txt");
+        //flujoChar.escribirCadena(cadena1, cadena2);
+        
+        //Pruebas con caracteres (lectura)
+        //flujoChar.leerCar("escrituraCar1.txt");
+        //flujoChar.leerCarBuffer("escrituraCarBuffer.txt");
+        //flujoChar.leerLinea("escrituraCar1.txt");
+        //flujoChar.leerArrayCar(arrayChar);
+        flujoChar.leerString(cadena2);
     }
 }

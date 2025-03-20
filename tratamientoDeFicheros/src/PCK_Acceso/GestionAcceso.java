@@ -41,6 +41,13 @@ public class GestionAcceso {
     }
 
     //Métodos de gestión de acceso
+
+    /**
+     *
+     * @param nombreFichero
+     * @param array1
+     * @param array2
+     */
     public void accederSecuencial(String nombreFichero, byte[] array1, byte[] array2 ){
         try{
             //Escritura
@@ -63,6 +70,12 @@ public class GestionAcceso {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param origen
+     * @param destino
+     */
     public void sobreescrituraDui(String origen, String destino){
         //En este caso el fichero origen ya existe y es un Lorem
         try{
@@ -86,6 +99,10 @@ public class GestionAcceso {
         }
     }
     
+    /**
+     *
+     * @param nombreArchivo
+     */
     public void accesoDirecto(String nombreArchivo){
         try{
             File f = new File(ruta + nombreArchivo);

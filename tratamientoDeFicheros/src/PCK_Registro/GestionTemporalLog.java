@@ -44,6 +44,12 @@ public class GestionTemporalLog {
     }
     
     //gestión de registros
+
+    /**
+     *
+     * @param id
+     * @param nombre
+     */
     public void addToList(int id, String nombre){
         //crear registro
         LocalDateTime fecha = LocalDateTime.now();
@@ -54,11 +60,19 @@ public class GestionTemporalLog {
         System.out.println("Registro añadido a la lista");
     }
     
+    /**
+     *
+     * @param reg
+     */
     public void addToList(Registro reg){
         this.registros.add(reg);
         System.out.println("Registro añadido a la lista");
     }
 
+    /**
+     *
+     * @param nombreArchivo
+     */
     public void addTxt(String nombreArchivo){
         //añadir los registros del array al txt creado antes
         if(registros.isEmpty()){

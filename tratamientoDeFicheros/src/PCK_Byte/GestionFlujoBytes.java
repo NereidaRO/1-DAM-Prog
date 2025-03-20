@@ -40,6 +40,11 @@ public class GestionFlujoBytes {
         return "GestionFlujoBytes{" + "CR=" + CR + ", LF=" + LF + ", ruta=" + ruta + '}';
     }
     //Métodos de ejemplo
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void escribirBinario(String nombreFichero){
         try{
             FileOutputStream fos = new FileOutputStream(ruta + nombreFichero);
@@ -59,6 +64,11 @@ public class GestionFlujoBytes {
             };
     
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void escribirBinarioBuffer(String nombreFichero){
         try{
             FileOutputStream fos = new FileOutputStream(ruta + nombreFichero);
@@ -79,6 +89,12 @@ public class GestionFlujoBytes {
                 System.out.println(ioe);
             };
     }
+
+    /**
+     *
+     * @param nombreFichero
+     * @param num
+     */
     public void escribirPrimitivo(String nombreFichero, int num){
         try{
             FileOutputStream fos = new FileOutputStream(ruta + nombreFichero);
@@ -91,6 +107,12 @@ public class GestionFlujoBytes {
                 System.out.println(ioe);
             };
     }
+
+    /**
+     *
+     * @param nombreFichero
+     * @param text
+     */
     public void escribirPrimitivo(String nombreFichero, String text){
         try{
             FileOutputStream fos = new FileOutputStream(ruta + nombreFichero);
@@ -103,6 +125,11 @@ public class GestionFlujoBytes {
                 System.out.println(ioe);
             };
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void escribirArray(String nombreFichero){
         try{
         FileOutputStream fos = new FileOutputStream(ruta + nombreFichero);
@@ -120,6 +147,11 @@ public class GestionFlujoBytes {
             System.out.println(ioe);
         };
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void imprimirByte(String nombreFichero){
         try{
         PrintStream ps;
@@ -139,6 +171,11 @@ public class GestionFlujoBytes {
             System.out.println(ioe);
         };
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void leerBinario(String nombreFichero){
         try{
             FileInputStream fis = new FileInputStream(ruta + nombreFichero);
@@ -151,6 +188,11 @@ public class GestionFlujoBytes {
             System.out.println(ioe);
         };
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void leerBinarioBuffer(String nombreFichero){
         try{
             FileInputStream fis = new FileInputStream(ruta + nombreFichero);
@@ -165,6 +207,12 @@ public class GestionFlujoBytes {
             System.out.println(ioe);
         };
     }
+
+    /**
+     *
+     * @param nombreFichero
+     * @param opt
+     */
     public void leerPrimitivo(String nombreFichero, String opt){
         try{
          FileInputStream fis = new FileInputStream(ruta + nombreFichero);
@@ -180,6 +228,11 @@ public class GestionFlujoBytes {
             System.out.println(ioe);
         };
     }
+
+    /**
+     *
+     * @param array
+     */
     public void leerArrayByte(byte[] array){
         //Esto no produce IOException (aviso de NetBeans) -> no necesario try-catch
         ByteArrayInputStream readArray = new ByteArrayInputStream(array);
@@ -188,6 +241,12 @@ public class GestionFlujoBytes {
             System.out.println("El carácter ASCII " + b + " es: " + (char)b);
         }
     }
+
+    /**
+     *
+     * @param nombreFichero
+     * @param array
+     */
     public void leerByteMultiple (String nombreFichero, byte[] array){
         try{
             ByteArrayInputStream io1 = new ByteArrayInputStream(array);

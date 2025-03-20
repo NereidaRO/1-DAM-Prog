@@ -35,6 +35,12 @@ public class GestionArbolFicheros {
     }
     
     //Métodos para gestión de ficheros
+
+    /**
+     *
+     * @param nombreDir
+     * @param nombreArchivo
+     */
     public void crearFD(String nombreDir, String nombreArchivo){
         try{
             File dir = new File(ruta + nombreDir);
@@ -47,6 +53,12 @@ public class GestionArbolFicheros {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param nombreDir
+     * @param nombreArchivo
+     */
     public void eliminarFD(String nombreDir, String nombreArchivo){
         //NetBeans avisa de que no se lanzan excepciones -> no try-catch
         File dir = new File(ruta + nombreDir);
@@ -57,6 +69,11 @@ public class GestionArbolFicheros {
         System.out.println("Directorio eliminado");
         
     }
+
+    /**
+     *
+     * @param nombreArchivo
+     */
     public void tipoArchivo(String nombreArchivo){
         File prueba = new File(ruta + nombreArchivo);
         if(prueba.isFile()){
@@ -67,11 +84,22 @@ public class GestionArbolFicheros {
             System.out.println("Es otra cosa");
         }
     }
+
+    /**
+     *
+     * @param nombreArchivo
+     */
     public void buscarPadre(String nombreArchivo){
         File prueba = new File(ruta + nombreArchivo);
         String parent = prueba.getParent();
         System.out.println("El padre es: " + parent);
     }
+
+    /**
+     *
+     * @param opt
+     * @param nombreArchivo
+     */
     public void gestionarPermiso(String opt, String nombreArchivo){
         File gestionable = new File(ruta + nombreArchivo);
         if(opt == "r"){

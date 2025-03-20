@@ -35,6 +35,11 @@ public class GestionFlujoCaracteres {
     }
     
     //Métodos de ejemplo
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void escribirCar(String nombreFichero){
         try{
         FileWriter fw = new FileWriter(ruta + nombreFichero);
@@ -45,6 +50,11 @@ public class GestionFlujoCaracteres {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void escribirCarBuffer(String nombreFichero){
         try{
         FileWriter fw = new FileWriter(ruta + nombreFichero);
@@ -58,6 +68,11 @@ public class GestionFlujoCaracteres {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void escribirCarArray(String nombreFichero){
         try{
         FileWriter fw = new FileWriter(ruta + nombreFichero);
@@ -71,6 +86,11 @@ public class GestionFlujoCaracteres {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void imprimirCar(String nombreFichero){
         try{
         PrintWriter pw;
@@ -91,6 +111,12 @@ public class GestionFlujoCaracteres {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param cadena1
+     * @param cadena2
+     */
     public void escribirCadena(String cadena1, String cadena2){
         StringWriter sw = new StringWriter();
         sw.write(cadena1);
@@ -98,6 +124,11 @@ public class GestionFlujoCaracteres {
         System.out.println("Convirtiendo a String: " + sw.toString());
         System.out.println("En el buffer: " + sw.getBuffer());
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void leerCar(String nombreFichero){
         try{
         FileReader fr = new FileReader(ruta + nombreFichero);
@@ -111,6 +142,11 @@ public class GestionFlujoCaracteres {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void leerCarBuffer(String nombreFichero){
         try{
         FileReader fr = new FileReader(ruta + nombreFichero);
@@ -129,6 +165,11 @@ public class GestionFlujoCaracteres {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param nombreFichero
+     */
     public void leerLinea(String nombreFichero){
         try{
             FileReader fr = new FileReader(ruta + nombreFichero);
@@ -142,6 +183,11 @@ public class GestionFlujoCaracteres {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param array
+     */
     public void leerArrayCar(char[] array){
         try{
             CharArrayReader car = new CharArrayReader(array);
@@ -155,6 +201,11 @@ public class GestionFlujoCaracteres {
             System.out.println(ioe);
         }
     }
+
+    /**
+     *
+     * @param cadena
+     */
     public void leerString(String cadena){
         try{
             StringReader sr = new StringReader(cadena);

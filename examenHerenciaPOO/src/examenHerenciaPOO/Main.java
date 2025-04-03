@@ -21,8 +21,8 @@ System.out.println("Examen Control POO Herencia");
 		
 		// Creación de objetos
 					
-		Futbolista futbolista1 = new Futbolista(2200, null);
-		Futbolista futbolista2 = new Futbolista(2200, null);
+		Futbolista futbolista1 = new Futbolista(2200);
+		Futbolista futbolista2 = new Futbolista(2200);
 		
 		//futbolista1.setId(2024); // esto debería de provocar un error, el método no debe de estar
 		futbolista1.setNombre("Roberto");
@@ -33,7 +33,7 @@ System.out.println("Examen Control POO Herencia");
 		
 		
 		
-		futbolista2.setId(2025); // esto debería de provocar un error, el método no debe de estar
+		//futbolista2.setId(2025);  esto debería de provocar un error, el método no debe de estar
 		futbolista2.setNombre("Alejandro");
 		futbolista2.setApellidos("Romero Correcaminos");
 		futbolista2.setEdad(25);
@@ -41,12 +41,12 @@ System.out.println("Examen Control POO Herencia");
 		futbolista2.setDemarcacion("Lateral");
 		futbolista2.setDorsal(15);
 
-		Entrenador entrenador1 = new Entrenador ("2345");
+		Entrenador entrenador1 = new Entrenador (123456,"2345");
 		entrenador1.setNombre("Roberto");
 		entrenador1.setApellidos("Pedraza Rodriguez");
 		entrenador1.setEdad(40);
 		
-		Entrenador entrenador2 = new Entrenador ("6055");
+		Entrenador entrenador2 = new Entrenador (123457,"6055");
 		entrenador2.setNombre("Alberto");
 		entrenador2.setApellidos("Pedraza Nuñez");
 		entrenador2.setEdad(36);
